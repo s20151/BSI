@@ -13,6 +13,7 @@ A man retires with $250,000 at 65. He wants to convert it to an annuity that wil
 
 ## Task 3: 
 A person wants to buy a $300,000 home in 10 years. He wants to save bydepositing an equal amount of money each year into a special account. At 13.5%interest rate, what should his annual deposit be?
+> Answer: $15,896.09
 
 ## Task 4:
 A small computer manufacturing company is operated by four employees. It isknown that one particular employee misses an average of 10 out of every l00 days.
