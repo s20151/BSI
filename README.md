@@ -20,7 +20,7 @@ A small computer manufacturing company is operated by four employees. It isknown
 * Each of the other three employees is absent on an average of 5 out of every 100 days. Absences are random and independent.
 * The expenses of the company are $5000/day when operating and $4000/day when shut down. The income at full productionis $8000/day.
 * The company can still operate if three employees are present; however, theincome of the company drops to 60% of the income at full production.
-* If more than one employee is absent,production stops.
+* If more than one employee is absent,production stops.__
 *What is the expected daily profit(i.e.,income–expenses)for this company? 
 Hint: Try the binomial distribution.*
 > Answer: $2190.25
