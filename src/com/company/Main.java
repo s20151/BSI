@@ -31,7 +31,7 @@ public class Main {
                     "He wants to save by depositing an equal amount of money each year into a special account. " +
                     "\nAt P % interest rate, what should his annual deposit be?");
             System.out.println("4. ");
-            System.out.println("5. Four persons are  chosen at random from a group containing 3  men, 2  women and  4  children. " +
+            System.out.println("5. sum(ABC) persons are  chosen at random from a group containing A men, B women and  C children. " +
                     "Calculate the chances that exactly two of them will be children");
             System.out.println("9. Exit.");
             try{
@@ -44,7 +44,7 @@ public class Main {
             }
             switch(choice) {
                 case 1 -> {
-                    System.out.println("Enter: \n1. Investment duration \n2. Amount of money to achive \n3. Interest rate percentage");
+                    System.out.println("Enter: \n1. Investment duration in yerars \n2. Desired amount of money \n3. Interest rate percentage");
                     try {
                         Tasks.investmentEstimate(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
@@ -53,7 +53,8 @@ public class Main {
                     }
                 }
                 case 2 -> {
-                    System.out.println("Enter: \n1. Age of retirement \n2. Estimated life expectancy \n3. Interest rate percentage");
+                    System.out.println("Enter: \n1. Age of retirement \n2. Estimated life expectancy " +
+                            "\n3. Amount of money invested \n4. Interest rate percentage");
                     try {
                         Tasks.annuityConverter(scanner.nextInt(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
@@ -62,7 +63,8 @@ public class Main {
                     }
                 }
                 case 3 -> {
-                    System.out.println("Enter: \n1. Investment duration \n2. Amount of money to achive \n3. Interest rate percentage");
+                    System.out.println("Enter: \n1. Investment duration in years (amount of payments) \n2. Desired amount of money " +
+                            "\n3. Interest rate percentage");
                     try {
                         Tasks.annualDepositEstimatate(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
@@ -80,11 +82,11 @@ public class Main {
                     }
                 }
                 case 5 -> {
-                    System.out.println("Enter: \n1. Investment duration \n2. Amount of money to achive \n3. Interest rate percentage");
+                    System.out.println("Enter: \n1. Amount of men \n2. Amount of women \n3. Amount of children");
                     try {
-                        // TODO Tasks.(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
+                        Tasks.probabilityCalculator(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
                     }catch(InputMismatchException e) {
-                        System.err.println("Wrong input! Input only valid numbers.");
+                        System.err.println("Wrong input! You can not enter negative amount of people!");
                         scanner.nextLine();
                     }
                 }
