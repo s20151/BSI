@@ -8,8 +8,7 @@ A man sets up a fund for his new-born son’s college education. He figures the 
 > Answer: $7194.35
 
 ## Task 2:
-A man retires with $250,000 at 65. He wants to convert it to an annuity that will look after him until he is 100. If interest rate is 8%, what is his annual retirement income?
-> Answer: $21,450.82
+A  man and his  wife appear for an interview for two posts. The probability of husband's selection is 1/7 and that of the wife's selection is  1/5. What is the probability that only one of them will be selected?
 
 ## Task 3: 
 A person wants to buy a $300,000 home in 10 years. He wants to save by depositing an equal amount of money each year into a special account. At 13.5% interest rate, what should his annual deposit be?
