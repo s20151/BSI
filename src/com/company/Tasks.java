@@ -23,9 +23,13 @@ public class Tasks {
         }
         rate=rate*100;
         System.out.println("You should invest " + numberFormat.format(investment) + "$ to reach " +
-                numberFormat.format(goal) + "$ in " + years + " years with " + rate + "% interest rate.");
+                numberFormat.format(goal) + "$ in " + years + " years with " + rate*100 + "% interest rate.");
     }
 
 
 
+
 }
+=======
+}
+>>>>>>> 7c013df951d60267dacd8e8084e574ad727ea6f3:src/com/company/tasks/Task1.java
