@@ -32,7 +32,7 @@ public class Tasks {
         for(int i=0; i<years; i++){
             investment=investment/(1+rate/100);
         }
-        rate=rate*100;
+        rate/=100;
 
         System.out.println("You should invest " + numberFormat.format(investment) + "$ to reach " +
                 numberFormat.format(goal) + "$ in " + years + " years with " + rate*100 + "% interest rate.");
@@ -49,6 +49,8 @@ public class Tasks {
      * @param rate interest rate percentage 1-100%
      */
     public static void annuityConverter(int initialAge, int goalAge, double investment, double rate){
+        if(initialAge < 0 || goalAge < 0 || rate < 0 || investment < 0)
+            throw new InputMismatchException();
         int years = goalAge - initialAge;
         double annual_income = investment;
         DecimalFormat numberFormat = new DecimalFormat("#.00");
