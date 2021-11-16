@@ -25,8 +25,9 @@ public class Main {
             System.out.println("Select problem: ");
             System.out.println("1. A man sets up a fund for his new-born son’s college education. He figures the son will go to college at X for a cost of Y." +
                     "\nHow much should be put in the fund if the interest rate is P %");
-            System.out.println("2. A man retires with X amount of money at the age of Y He wants to convert it to an annuity that will ook after him until he is Z. " +
-                    "\nIf interest rate is P %, what is his annual retirement income?");
+            System.out.println("2. A  man and his  wife appear for an interview for two posts. " +
+                    "The probability of husband's selection is X and that of the wife's selection is  Y. " +
+                    "What is the probability that only one of them will be selected? ?");
             System.out.println("3. A person wants to buy a home for X amount of money in Y years. " +
                     "He wants to save by depositing an equal amount of money each year into a special account. " +
                     "\nAt P % interest rate, what should his annual deposit be?");
@@ -53,10 +54,9 @@ public class Main {
                     }
                 }
                 case 2 -> {
-                    System.out.println("Enter: \n1. Age of retirement \n2. Estimated life expectancy " +
-                            "\n3. Amount of money invested \n4. Interest rate percentage");
+                    System.out.println("Enter: \n1. Probability of wife's selection  \n2. Probability of husband's selection  ");
                     try {
-                        Tasks.annuityConverter(scanner.nextInt(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
+                        Tasks.probabilityOfChosingOnlyOne(scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
                         System.err.println("Wrong input! Input only valid numbers.");
                         scanner.nextLine();

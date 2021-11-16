@@ -40,29 +40,17 @@ public class Tasks {
     }
 
     /**
-     * Problem #2 from set 03, chapter V
-     *  Method counts annual retirement income on course of retirement based on
-     *  amount of money invested, interest rate and retirement duration (goalAge - initialAge).
+     * Method counts probability that only one of them will be selected.
      *
-     * @param initialAge age of retirement
-     * @param goalAge estimated life expectancy
-     * @param investment amount of money to invest
-     * @param rate interest rate percentage 1-100%
+     * @param wifeProbability probability of wife's selection
+     * @param husbandProbability probability of husband's selection
      * @throws InputMismatchException when user enters incorrect data
      */
-    public static void annuityConverter(int initialAge, int goalAge, double investment, double rate){
-        if(initialAge < 0 || goalAge < 0 || rate < 0 || investment < 0 || rate > 100)
+    public static void probabilityOfChosingOnlyOne(double wifeProbability, double husbandProbability){
+        if(wifeProbability < 0 || husbandProbability < 0 || wifeProbability > 1 || husbandProbability > 1)
             throw new InputMismatchException();
-        int years = goalAge - initialAge;
-        double annual_income = investment;
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
-
-        annual_income = annual_income + annual_income * rate/100;
-        annual_income = annual_income - investment;
-        annual_income = annual_income + annual_income * rate/100;
-
-        System.out.println("To equally divide " + numberFormat.format(investment) + "$ for " + years + " years with " +
-                rate + "% interest rate, you will have " + numberFormat.format(annual_income) + " annual income.");
+        double probability = wifeProbability * (1-husbandProbability) + husbandProbability * (1-wifeProbability);
+        System.out.println("Probability that only one of them will be selected equals: "+ probability );
     }
 
     /**
