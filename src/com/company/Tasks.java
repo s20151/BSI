@@ -48,6 +48,7 @@ public class Tasks {
      * @param goalAge estimated life expectancy
      * @param investment amount of money to invest
      * @param rate interest rate percentage 1-100%
+     * @throws InputMismatchException when user enters incorrect data
      */
     public static void annuityConverter(int initialAge, int goalAge, double investment, double rate){
         if(initialAge < 0 || goalAge < 0 || rate < 0 || investment < 0 || rate > 100)
