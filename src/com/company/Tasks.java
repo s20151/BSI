@@ -1,18 +1,21 @@
-package com.company.tasks;
+package com.company;
 
 import java.text.DecimalFormat;
 
-//03_chapter_V_1
-public class Task1 {
+/**
+ * Class includes all five methods used to calculate our problems.
+ */
+public class Tasks {
     /**
-     * Counts how much should we invest to achive given goal with given interest rest for given amount of years.
+     *  Problem #1 from set 03, chapter V
+     * Function counts how much should we invest to achive given goal with given interest rest for given amount of years.
      *
      * @param years - amount of years
      * @param goal -  amount o money we want to achive
      * @param rate - interest rate percentage 1-100%
      * @function prints
      */
-    public static void investment_estimate(int years, double goal, double rate) {
+    public static void investmentEstimate(int years, double goal, double rate) {
         double investment = goal;
         DecimalFormat numberFormat = new DecimalFormat("#.00");
         for(int i=0; i<years; i++){
@@ -22,5 +25,7 @@ public class Task1 {
         System.out.println("You should invest " + numberFormat.format(investment) + "$ to reach " +
                 numberFormat.format(goal) + "$ in " + years + " years with " + rate + "% interest rate.");
     }
+
+
 
 }

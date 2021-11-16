@@ -5,6 +5,6 @@ import com.company.tasks.*;
 public class Main {
 
     public static void main(String[] args) {
-        Task1.investment_estimate(18,40000,0.1);
+        Tasks.investmentEstimate(18,40000,0.1);
     }
 }
