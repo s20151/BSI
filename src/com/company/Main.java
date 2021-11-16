@@ -21,19 +21,27 @@ public class Main {
             System.out.println("5. Four persons are  chosen at random from a group containing 3  men, 2  women and  4  children. Calculate the chances that exactly two of them will be children");
             try{
                 choice = scanner.nextInt();
+                if(choice<1||choice>5)
+                    throw new InputMismatchException();
             }catch (InputMismatchException e) {
-                System.err.println("Wrong input! Input only integer numbers please...");
+                System.err.println("Wrong input! Input only integer in range 1-5 please.");
                 scanner.nextLine();
             }
             switch(choice){
                 case 1:
-                    Tasks.investmentEstimate();
+                    System.out.println("Enter: \n1. Investment duration \n2. Amount of money to achive \n3. Interest rate percentage");
+                    try{
+                    Tasks.investmentEstimate(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
+                    }catch (InputMismatchException e) {
+                        System.err.println("Wrong input! Input only valid numbers.");
+                        scanner.nextLine();
+                    }
                     break;
                 case 2:
-                    Tasks.annuityConverter();
+                    //Tasks.annuityConverter();
                     break;
                 case 3:
-
+                    //Tasks.annualDepositEstimatate();
                     break;
                 case 4:
 
@@ -41,9 +49,6 @@ public class Main {
                 case 5:
 
                     break;
-                default:
-                    System.out.println("You can choose only 1, 2, 3, 4, 5");
-
             }
 
 

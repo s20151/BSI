@@ -1,6 +1,7 @@
 package com.company;
 
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
 
 /**
  * This class consists exclusively of static methods that operate on integers and doubles,
@@ -20,13 +21,16 @@ public class Tasks {
      * @param years investment duration in years
      * @param goal amount o money person wants to achive
      * @param rate interest rate percentage 1-100%
+     * @throws InputMismatchException when user enters incorrect data
      */
     public static void investmentEstimate(int years, double goal, double rate) {
+        if(years < 0 || goal < 0 || rate < 0)
+            throw new InputMismatchException();
         double investment = goal;
         DecimalFormat numberFormat = new DecimalFormat("#.00");
 
         for(int i=0; i<years; i++){
-            investment=investment/(1+rate);
+            investment=investment/(1+rate/100);
         }
         rate=rate*100;
 
@@ -65,8 +69,11 @@ public class Tasks {
      * @param years amount of years = amount of deposits
      * @param goal desired amount of money
      * @param rate interest rate percentage 1-100%
+     * @throws InputMismatchException when user enters incorrect data
      */
     public static void annualDepositEstimatate(int years, double goal, double rate) {
+        if(years < 0 || goal < 0 || rate < 0)
+            throw new InputMismatchException();
         double annual_deposit = goal;
         DecimalFormat numberFormat = new DecimalFormat("#.00");
 
