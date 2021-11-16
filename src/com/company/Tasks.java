@@ -27,9 +27,4 @@ public class Tasks {
     }
 
 
-
-
 }
-=======
-}
->>>>>>> 7c013df951d60267dacd8e8084e574ad727ea6f3:src/com/company/tasks/Task1.java
