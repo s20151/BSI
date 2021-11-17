@@ -15,8 +15,7 @@ A person wants to buy a $300,000 home in 10 years. He wants to save by depositin
 > Answer: $15,896.09
 
 ## Task 4:
-A computer memory system consists of four identical memory units connectedin parallel. The memory system’s “system success criteria” require that at least three memory units must function.
-*What is the probability of system success if the reliability of each memoryunit is 0.90*
+A computer memory system consists of four identical memory units connectedin parallel. The memory system’s “system success criteria” require that at least three memory units must function. What is the probability of system success if the reliability of each memoryunit is 0.90?
 > Answer: 0.947700
 
 ## Task 5:
