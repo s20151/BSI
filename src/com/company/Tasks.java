@@ -71,7 +71,7 @@ public class Tasks {
         annual_deposit = rate/(Math.pow(rate+1,years)-1)*goal;
 
         System.out.println("To reach " + numberFormat.format(goal) + "$ in " +
-                + years + " years with " + rate*100 + "% interest rate, you should be depositing "
+                + years + " years with " + rate + "% interest rate, you should be depositing "
                 + numberFormat.format(annual_deposit) + "$ each year.");
     }
 
