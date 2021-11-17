@@ -68,7 +68,7 @@ public class Tasks {
         double annual_deposit = goal;
         DecimalFormat numberFormat = new DecimalFormat("#.00");
 
-        annual_deposit = rate/(Math.pow(rate+1,years)-1)*goal;
+        annual_deposit = (rate/100)/(Math.pow((rate/100)+1,years)-1)*goal;
 
         System.out.println("To reach " + numberFormat.format(goal) + "$ in " +
                 + years + " years with " + rate + "% interest rate, you should be depositing "
