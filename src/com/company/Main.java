@@ -75,7 +75,7 @@ public class Main {
                 case 4 -> {
                     System.out.println("Enter: \n1. Investment duration \n2. Amount of money to achive \n3. Interest rate percentage");
                     try {
-                        // TODO Tasks.investmentEstimate(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
+                        Tasks.successProbabilityCalculator(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
                         System.err.println("Wrong input! Input only valid numbers.");
                         scanner.nextLine();
