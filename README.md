@@ -15,15 +15,9 @@ A person wants to buy a $300,000 home in 10 years. He wants to save by depositin
 > Answer: $15,896.09
 
 ## Task 4:
-A small computer manufacturing company is operated by four employees. It is known that one particular employee misses an average of 10 out of every l00 days.
-* Each of the other three employees is absent on an average of 5 out of every 100 days. Absences are random and independent.
-* The expenses of the company are $5000/day when operating and $4000/day when shut down. The income at full productionis $8000/day.
-* The company can still operate if three employees are present; however, the income of the company drops to 60% of the income at full production.
-* If more than one employee is absent, production stops.
-
-*What is the expected daily profit(i.e.,income–expenses)for this company? 
-Hint: Try the binomial distribution.*
-> Answer: $2190.25
+A computer memory system consists of four identical memory units connectedin parallel. The memory system’s “system success criteria” require that at leastthreememory unitsmustfunction.
+*What is the probability of system success if the reliability of each memoryunit is 0.90*
+> Answer: 0.947700
 
 ## Task 5:
 Four persons are  chosen at random from a group containing 3 men, 2 women and 4 children. Calculate the chances that exactly two of them will be children.
