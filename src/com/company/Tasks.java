@@ -85,6 +85,34 @@ public class Tasks {
                 + years + " years with " + rate*100 + "% interest rate, you should be depositing "
                 + numberFormat.format(annual_deposit) + "$ each year.");
     }
+    
+     private static int factorial(int n){
+        if (n == 0)
+            return 1;
+        else
+            return(n * factorial(n-1));
+    }
+
+    private static double binomialDistribution(int total_number_of_successes, double probability_of_individual_success, int number_of_trials){
+        double binomial_probability;
+
+        binomial_probability = factorial(number_of_trials)/((factorial(number_of_trials-total_number_of_successes)*factorial(total_number_of_successes)))
+                *Math.pow(probability_of_individual_success,total_number_of_successes)*Math.pow(1-probability_of_individual_success,number_of_trials-total_number_of_successes);
+
+        return binomial_probability;
+    }
+
+
+    public static void successProbabilityCalculator(int all_units, int operating_units, double reliability){
+
+        double probability_3_operate = binomialDistribution(3,0.9,4);
+        double probability_all_operate = binomialDistribution(4,0.9,4);
+        double probability_of_system_success = probability_3_operate + probability_all_operate;
+
+        System.out.println("Probability of system success that consists of " + all_units + " units and needs at least " + operating_units + " units to operate is "
+                + probability_of_system_success + ".");
+
+    }
 
     /**
      * Problem #30 from set 02
