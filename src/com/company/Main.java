@@ -58,7 +58,7 @@ public class Main {
                 case 2 -> {
                        System.out.println("Enter: \n1. Probability of wife's selection  \n2. Probability of husband's selection  ");
                     try {
-                        Tasks.probabilityOfChosingOnlyOne(scanner.nextDouble(), scanner.nextDouble());
+                        Tasks.probabilityOfChoosingOnlyOne(scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
                         System.err.println("Wrong input! Input only valid numbers.");
                         scanner.nextLine();
@@ -68,7 +68,7 @@ public class Main {
                     System.out.println("Enter: \n1. Investment duration in years (amount of payments) \n2. Desired amount of money " +
                             "\n3. Interest rate percentage");
                     try {
-                        Tasks.annualDepositEstimatate(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
+                        Tasks.annualDepositEstimate(scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble());
                     }catch(InputMismatchException e) {
                         System.err.println("Wrong input! Input only valid numbers.");
                         scanner.nextLine();

@@ -1,4 +1,4 @@
-Package com.company;
+package com.company;
 
 import java.text.DecimalFormat;
 import java.util.InputMismatchException;
@@ -24,7 +24,7 @@ public class Tasks {
      * @param rate interest rate percentage 1-100%
      * @throws InputMismatchException when user enters incorrect data
      */
-    public static void investmentEstimate(int years, double goal, double rate) {
+    public static String investmentEstimate(int years, double goal, double rate) {
         if(years < 0 || goal < 0 || rate < 0 || rate > 100 )
             throw new InputMismatchException();
         double investment = goal;
@@ -37,6 +37,9 @@ public class Tasks {
 
         System.out.println("You should invest " + numberFormat.format(investment) + "$ to reach " +
                 numberFormat.format(goal) + "$ in " + years + " years with " + rate*100 + "% interest rate.");
+
+        return "You should invest " + numberFormat.format(investment) + "$ to reach " +
+                numberFormat.format(goal) + "$ in " + years + " years with " + rate*100 + "% interest rate.";
     }
 
     /**
@@ -46,11 +49,13 @@ public class Tasks {
      * @param husbandProbability probability of husband's selection
      * @throws InputMismatchException when user enters incorrect data
      */
-    public static void probabilityOfChosingOnlyOne(double wifeProbability, double husbandProbability){
+    public static String probabilityOfChoosingOnlyOne(double wifeProbability, double husbandProbability){
         if(wifeProbability < 0 || husbandProbability < 0 || wifeProbability > 1 || husbandProbability > 1)
             throw new InputMismatchException();
         double probability = wifeProbability * (1-husbandProbability) + husbandProbability * (1-wifeProbability);
         System.out.println("Probability that only one of them will be selected equals: "+ probability );
+
+        return "Probability that only one of them will be selected equals: "+ probability;
     }
 
     /**
@@ -63,7 +68,7 @@ public class Tasks {
      * @param rate interest rate percentage 1-100%
      * @throws InputMismatchException when user enters incorrect data
      */
-    public static void annualDepositEstimatate(int years, double goal, double rate) {
+    public static String annualDepositEstimate(int years, double goal, double rate) {
         if(years < 0 || goal < 0 || rate < 0 || rate > 100)
             throw new InputMismatchException();
         double annual_deposit = goal;
@@ -74,6 +79,10 @@ public class Tasks {
         System.out.println("To reach " + numberFormat.format(goal) + "$ in " +
                 + years + " years with " + rate + "% interest rate, you should be depositing "
                 + numberFormat.format(annual_deposit) + "$ each year.");
+
+        return "To reach " + numberFormat.format(goal) + "$ in " +
+                + years + " years with " + rate + "% interest rate, you should be depositing "
+                + numberFormat.format(annual_deposit) + "$ each year.";
     }
 
     /**
@@ -81,7 +90,7 @@ public class Tasks {
      * @param n number being factorialized
      * @return factoralized number
      */
-     private static int factorial(int n){
+     protected static int factorial(int n){
         if (n == 0)
             return 1;
         else
@@ -98,7 +107,7 @@ public class Tasks {
      * @param number_of_trials number of times the experiment runs
      * @return binomial probability of success
      */
-    private static double binomialDistribution(int total_number_of_successes, double probability_of_individual_success, int number_of_trials){
+    protected static double binomialDistribution(int total_number_of_successes, double probability_of_individual_success, int number_of_trials){
         double binomial_probability;
 
         binomial_probability = factorial(number_of_trials)/((factorial(number_of_trials-total_number_of_successes)*factorial(total_number_of_successes)))
@@ -116,7 +125,7 @@ public class Tasks {
      * @throws InputMismatchException when user enters probability out of bounds
      */
 
-    public static void successProbabilityCalculator(double reliability){
+    public static String successProbabilityCalculator(double reliability){
         if(reliability < 0.0 || reliability > 1.0)
             throw new InputMismatchException();
 
@@ -126,6 +135,9 @@ public class Tasks {
 
         System.out.println("Probability of system success that consists of 4 units and needs at least 3 units to operate when" +
                 "the reliability of each memory unit equals " + reliability + " is " + probability_of_system_success + ".");
+
+        return "Probability of system success that consists of 4 units and needs at least 3 units to operate when" +
+                " the reliability of each memory unit equals " + reliability + " is " + probability_of_system_success + ".";
 
     }
 
@@ -139,8 +151,8 @@ public class Tasks {
      * @param children amount of children
      * @throws InputMismatchException when user enters incorrect data
      */
-    public static void probabilityCalculator(int men, int women, int children) {
-        if(men < 0 || women < 0 || children < 0)
+    public static String probabilityCalculator(int men, int women, int children) {
+        if(men < 0 || women < 0 || children < 2 || men+women+children < 4)
             throw new InputMismatchException();
         double all = men + women + children;
         double probability;
@@ -155,5 +167,8 @@ public class Tasks {
 
         System.out.println("Probability of randomly choosing exactly 2 children from a group of "
                 + (int)all + " people is " + numberFormat.format(probability*100) + "%.");
+
+        return "Probability of randomly choosing exactly 2 children from a group of "
+                + (int)all + " people is " + numberFormat.format(probability*100) + "%.";
     }
 }
