@@ -5,6 +5,15 @@ import org.junit.rules.ExpectedException;
 
 import java.util.InputMismatchException;
 
+/**
+ * This class consists of tests and it is responsible for testing selected methods from Tasks class.
+ * In case of incorrect input program throws InputMismatchException.
+ *
+ * @see Tasks
+ * @author Norbert Leśniak
+ * @author Artur Piszczatowski
+ */
+
 
 public class TasksTest extends Tasks {
 

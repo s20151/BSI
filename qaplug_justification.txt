@@ -1,0 +1,63 @@
+@Artur Piszczatowski s20487
+@Norbert Leśniak s20151
+
+MINOR:
+	Efficiency:
+		- Method Argument Could Be Final
+			= Nie było potrzeby deklarowania zmiennych jako 'final'
+
+	Maintainability:
+		- Only One Return
+			= Obliczamy silnie metodą rekurencyjną, stąd więcej niż jeden
+			  'return'
+
+	Reliability:
+		- Local variable could be final
+			= Nie było potrzeby deklarowania zmiennych jako 'final'
+
+
+MAJOR:
+	Efficiency:
+		- Use Utility Class
+			= Brak znajomości klasy 'utility'
+	
+	Maintainability:
+		- Comment Size
+			= Obszerne komentarze spowodowane zawarciem treści poleceń oraz opisów
+			  zmiennych w celu wyjaśnienia metod, które one opisują konwencją JavaDoc
+
+		- Useless Parentheses
+			= Nawiasy dodane, aby równania były bradziej przejrzyste dla udzi
+	
+	Reliability:
+		- Dataflow Anomaly Analysis
+			= Zadeklarowanie zmiennej 'annual_deposit' i przypisanie do niej wartości
+			  zmiennej 'goal' aby nie deklarować bezpośrednio z równaniem oraz, żeby
+			  użytkownik wiedział, że jej wartość jest bezpośrednio uzależniona od 
+			  wartości kwoty docelowej
+	
+	Usability:
+		- Avoid Reassigning Parameters
+			= Celowe używanie zmiennych o tych samych nazwach w różnych metodach w celu
+			  przejrzystości kodu, ze względu na zbieżność znaczenia jakie sobą reprezentują
+
+		- If Else Stmts Must Use Braces
+			= Brak potrzeby podawania wartości w 'else'
+
+		- Long Variable
+			= Długie nazwy zmiennych celem doprecyzowania ich znaczenia oraz przejrzystość
+			  kodu dla użytkownika
+
+		- Naming - Class naming conventions
+			= Nie rozumiem z czego wynika błąd
+
+		- Naming - Variable naming conventions
+			= Brak znajomości danej zasady oraz zastosowanie '_' celem łatwiejszego identyfikowania
+			  znaczenia zmiennych
+
+		- Short Variable
+			= Użycie zmiennej 'n' w metodzie obliczającej silnie spowodowane ogólno przyjętym
+			  nazewnictwem zmiennych w podanym wzorze
+
+		- System Println
+			= Nieświadome złamanie nieznanej wcześniej zasady

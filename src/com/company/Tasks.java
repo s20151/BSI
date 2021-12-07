@@ -35,11 +35,12 @@ public class Tasks {
         }
         rate/=100;
 
-        System.out.println("You should invest " + numberFormat.format(investment) + "$ to reach " +
-                numberFormat.format(goal) + "$ in " + years + " years with " + rate*100 + "% interest rate.");
-
-        return "You should invest " + numberFormat.format(investment) + "$ to reach " +
+        String response = "You should invest " + numberFormat.format(investment) + "$ to reach " +
                 numberFormat.format(goal) + "$ in " + years + " years with " + rate*100 + "% interest rate.";
+
+        System.out.println(response);
+
+        return response;
     }
 
     /**
@@ -53,9 +54,11 @@ public class Tasks {
         if(wifeProbability < 0 || husbandProbability < 0 || wifeProbability > 1 || husbandProbability > 1)
             throw new InputMismatchException();
         double probability = wifeProbability * (1-husbandProbability) + husbandProbability * (1-wifeProbability);
-        System.out.println("Probability that only one of them will be selected equals: "+ probability );
 
-        return "Probability that only one of them will be selected equals: "+ probability;
+        String response = "Probability that only one of them will be selected equals: "+ probability;
+        System.out.println(response);
+
+        return response;
     }
 
     /**
@@ -76,13 +79,13 @@ public class Tasks {
 
         annual_deposit = (rate/100)/(Math.pow((rate/100)+1,years)-1)*goal;
 
-        System.out.println("To reach " + numberFormat.format(goal) + "$ in " +
-                + years + " years with " + rate + "% interest rate, you should be depositing "
-                + numberFormat.format(annual_deposit) + "$ each year.");
-
-        return "To reach " + numberFormat.format(goal) + "$ in " +
+        String response = "To reach " + numberFormat.format(goal) + "$ in " +
                 + years + " years with " + rate + "% interest rate, you should be depositing "
                 + numberFormat.format(annual_deposit) + "$ each year.";
+
+        System.out.println(response);
+
+        return response;
     }
 
     /**
@@ -94,7 +97,7 @@ public class Tasks {
         if (n == 0)
             return 1;
         else
-            return(n * factorial(n-1));
+            return n * factorial(n-1);
     }
 
     /**
@@ -133,11 +136,12 @@ public class Tasks {
         double probability_all_operate = binomialDistribution(4,reliability,4);
         double probability_of_system_success = probability_3_operate + probability_all_operate;
 
-        System.out.println("Probability of system success that consists of 4 units and needs at least 3 units to operate when" +
-                "the reliability of each memory unit equals " + reliability + " is " + probability_of_system_success + ".");
-
-        return "Probability of system success that consists of 4 units and needs at least 3 units to operate when" +
+        String response = "Probability of system success that consists of 4 units and needs at least 3 units to operate when" +
                 " the reliability of each memory unit equals " + reliability + " is " + probability_of_system_success + ".";
+
+        System.out.println(response);
+
+        return response;
 
     }
 
@@ -165,10 +169,11 @@ public class Tasks {
 
         probability = first_child*second_child*third_not_child*forth_not_child;
 
-        System.out.println("Probability of randomly choosing exactly 2 children from a group of "
-                + (int)all + " people is " + numberFormat.format(probability*100) + "%.");
-
-        return "Probability of randomly choosing exactly 2 children from a group of "
+        String response = "Probability of randomly choosing exactly 2 children from a group of "
                 + (int)all + " people is " + numberFormat.format(probability*100) + "%.";
+
+        System.out.println(response);
+
+        return response;
     }
 }
