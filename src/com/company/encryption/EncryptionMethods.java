@@ -3,16 +3,52 @@ package com.company.encryption;
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 
+/**
+ * @author Norbert Leśniak
+ * @author Artur Piszczatowski
+ * Source: https://www.baeldung.com/java-aes-encryption-decryption
+ *
+ *This class consists exclusively of static methods that encrypt text files.
+ * Algorithms used:
+ * AES/CBC/PKCS5PADDING
+ * TripleDES/CBC/PKCS5Padding
+ * Blowfish
+ *
+ * @see Cipher
+ * @see IvParameterSpec
+ * @see SecretKey
+ * @see String
+ * @see NoSuchPaddingException
+ * @see NoSuchAlgorithmException
+ * @see InvalidAlgorithmParameterException
+ * @see InvalidKeyException
+ * @see FileInputStream
+ * @see FileOutputStream
+ *
+ */
 public class EncryptionMethods {
-
+    /**
+     *
+     * Method encrypts file using AES-CBC algorithm
+     *
+     * @param inputFile - input text file directory
+     * @param outputFile - output encrypted text file directory
+     * @param key - the encryption key
+     * @param iv - the initialization vector
+     * @throws NoSuchPaddingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws IOException
+     */
     public static void encryptAES(String inputFile, String outputFile, SecretKey key,
                                     IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
@@ -42,7 +78,22 @@ public class EncryptionMethods {
         inputStream.close();
         outputStream.close();
     }
-
+    /**
+     *
+     * Method encrypts file using 3DES algorithm
+     *
+     * @param inputFile - input text file directory
+     * @param outputFile - output encrypted text file directory
+     * @param key - the encryption key
+     * @param iv - the initialization vector
+     * @throws NoSuchPaddingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws IOException
+     */
     public static void encrypt3DES(String inputFile, String outputFile, SecretKey key,
                                    IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
             IOException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException, InvalidKeyException {
@@ -71,7 +122,21 @@ public class EncryptionMethods {
         inputStream.close();
         outputStream.close();
     }
-
+    /**
+     *
+     * Method encrypts file using Blowfish algorithm
+     *
+     * @param inputFile - input text file directory
+     * @param outputFile - output encrypted text file directory
+     * @param key - the encryption key
+     * @throws NoSuchPaddingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws IOException
+     */
     public static void encryptBlowfish(String inputFile, String outputFile, SecretKey key)
             throws NoSuchPaddingException, NoSuchAlgorithmException,
             IOException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException, InvalidKeyException {
