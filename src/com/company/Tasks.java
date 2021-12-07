@@ -1,4 +1,4 @@
-Package com.company;
+package com.company;
 
 import java.text.DecimalFormat;
 import java.util.InputMismatchException;
