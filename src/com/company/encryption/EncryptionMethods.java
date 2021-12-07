@@ -72,12 +72,32 @@ public class EncryptionMethods {
         outputStream.close();
     }
 
-    public static String encryptIDEA(String data){
-        String encryptedData = "";
+    public static void encryptBlowfish(String inputFile, String outputFile, SecretKey key)
+            throws NoSuchPaddingException, NoSuchAlgorithmException,
+            IOException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException, InvalidKeyException {
 
+        Cipher cipher = Cipher.getInstance("Blowfish");
+        cipher.init(Cipher.ENCRYPT_MODE, key);
 
+        FileInputStream inputStream = new FileInputStream(inputFile);
+        FileOutputStream outputStream = new FileOutputStream(outputFile);
 
+        byte[] buffer = new byte[64];
+        int bytesRead;
 
-        return encryptedData;
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            byte[] output = cipher.update(buffer, 0, bytesRead);
+            if (output != null) {
+                outputStream.write(output);
+            }
+        }
+
+        byte[] outputBytes = cipher.doFinal();
+        if (outputBytes != null) {
+            outputStream.write(outputBytes);
+        }
+
+        inputStream.close();
+        outputStream.close();
     }
 }

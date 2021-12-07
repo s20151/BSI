@@ -21,16 +21,16 @@ public class Main {
         return key;
     }
 
-    public static IvParameterSpec generateIv() {
-        byte[] iv = new byte[8];
+    public static IvParameterSpec generateIv(int size) {
+        byte[] iv = new byte[size];
         new SecureRandom().nextBytes(iv);
         return new IvParameterSpec(iv);
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, InvalidAlgorithmParameterException, NoSuchPaddingException, IOException {
-        IvParameterSpec iv = generateIv();
-        SecretKey key = generateKey(112, "TripleDES");
-        EncryptionMethods.encrypt3DES("text_files\\file8.txt", "output.txt", key, iv);
-        DecryptionMethods.decrypt3DES("output.txt", "decrypted.txt", key, iv);
+        IvParameterSpec iv = generateIv(8);
+        SecretKey key = generateKey(112, "Blowfish");
+        EncryptionMethods.encryptBlowfish("text_files\\file10.txt", "output.txt", key);
+        DecryptionMethods.decryptBlowfish("output.txt", "decrypted.txt", key);
     }
 }

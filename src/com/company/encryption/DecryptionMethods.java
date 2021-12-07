@@ -72,13 +72,33 @@ public class DecryptionMethods {
         outputStream.close();
     }
 
-    public static String decryptIDEA(String data){
-        String decryptedData = "";
+    public static void decryptBlowfish(String inputFile, String outputFile, SecretKey key)
+            throws NoSuchPaddingException, NoSuchAlgorithmException,
+            IOException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException, InvalidKeyException {
 
+        Cipher cipher = Cipher.getInstance("Blowfish");
+        cipher.init(Cipher.DECRYPT_MODE, key);
 
+        FileInputStream inputStream = new FileInputStream(inputFile);
+        FileOutputStream outputStream = new FileOutputStream(outputFile);
 
+        byte[] buffer = new byte[64];
+        int bytesRead;
 
-        return decryptedData;
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            byte[] output = cipher.update(buffer, 0, bytesRead);
+            if (output != null) {
+                outputStream.write(output);
+            }
+        }
+
+        byte[] outputBytes = cipher.doFinal();
+        if (outputBytes != null) {
+            outputStream.write(outputBytes);
+        }
+
+        inputStream.close();
+        outputStream.close();
     }
 
 }
