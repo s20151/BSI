@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
  * solve given problems and print outcome on terminal. They do not return any value.
  *
  * @see DecimalFormat
+ * @see InputMismatchException
  * @author Norbert Leśniak s20151
  * @author Artur Piszczatowski s20487
  */
